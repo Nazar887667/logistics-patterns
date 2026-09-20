@@ -21,6 +21,11 @@ public class Main {
         System.out.println("2. Sea");
         System.out.print("Enter choice: ");
 
+        if (!scanner.hasNextInt()) {
+            System.out.println("Missing or invalid delivery choice.");
+            return;
+        }
+
         int deliveryChoice = scanner.nextInt();
 
         Logistics logistics;
@@ -39,6 +44,11 @@ public class Main {
         System.out.println("1. Windows");
         System.out.println("2. MacOS");
         System.out.print("Enter choice: ");
+
+        if (!scanner.hasNextInt()) {
+            System.out.println("Missing or invalid platform choice.");
+            return;
+        }
 
         int platformChoice = scanner.nextInt();
 

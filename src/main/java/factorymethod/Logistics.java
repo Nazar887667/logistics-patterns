@@ -2,10 +2,9 @@ package factorymethod;
 
 public abstract class Logistics {
 
-    public void planDelivery() {
+    public void planDelivery(String cargo, String destination) {
         Transport transport = createTransport();
-        transport.deliver();
+        transport.deliver(cargo, destination);
     }
-
     protected abstract Transport createTransport();
 }
