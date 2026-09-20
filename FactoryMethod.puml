@@ -1,0 +1,36 @@
+@startuml
+
+interface Transport {
+    +deliver(cargo: String, destination: String): void
+}
+
+class Truck {
+    +deliver(cargo: String, destination: String): void
+}
+
+class Ship {
+    +deliver(cargo: String, destination: String): void
+}
+
+abstract class Logistics {
+    +planDelivery(cargo: String, destination: String): void
+    #createTransport(): Transport
+}
+
+class RoadLogistics {
+    #createTransport(): Transport
+}
+
+class SeaLogistics {
+    #createTransport(): Transport
+}
+
+Transport <|.. Truck
+Transport <|.. Ship
+
+Logistics <|-- RoadLogistics
+Logistics <|-- SeaLogistics
+
+Logistics ..> Transport : uses
+
+@enduml
